@@ -10,12 +10,40 @@
 <body>
     <h2 class="text-center m-4">Dice Roller</h2>
     <div>
-        <img src="./img/default.png" class="d-block mx-auto" alt="dice" width="250px">
+        <img src="./img/default.png" class="d-block mx-auto" alt="dice" width="250px" id="dice-img">
 
-        <button type="button" class="btn-roll d-block mx-auto mt-3 p-2 border rounded-4 fs-4 fw-medium">Roll Dice</button>
+        <button type="button" class="btn-roll d-block mx-auto mt-3 p-2 border rounded-4 fs-4 fw-medium" onclick="rollDice()">Roll Dice</button>
     </div>
 
 
+    <script>
+        function rollDice() {
+            const dice = document.getElementById("dice-img");
+            const min = 1;
+            const max = 6;
+            const randomNumber = Math.round(Math.random() * (max - min)) + min;
+            switch (randomNumber) {
+                case 1 :
+                dice.src = "./img/one.png";
+                break;
+                case 2 : 
+                dice.src = "./img/two.png";
+                break;
+                case 3:
+                dice.src = "./img/three.png";
+                break;
+                case 4:
+                dice.src = "./img/four.png";
+                break;
+                case 5: 
+                dice.src = "./img/five.png";
+                break;
+                case 6: 
+                dice.src = "./img/six.png";
+                break;
+            }
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
